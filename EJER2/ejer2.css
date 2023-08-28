@@ -1,0 +1,62 @@
+/* Resetear los márgenes y paddings por defecto */
+body, ul {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Estilo básico para el menú */
+  .menu {
+    list-style: none;
+    display: flex;
+    background-color: #777fec;
+    font-family: Arial, sans-serif;
+  }
+  
+  .menu > li {
+    position: relative;
+  }
+  
+  .menu > li > a {
+    display: block;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+  }
+  
+  /* Estilo para los submenús */
+  .submenu {
+    display: none;
+    position: absolute;
+    background-color: #777fec;
+  }
+  
+  .submenu > li {
+    width: 200px;
+  }
+  
+  .submenu > li > a {
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+  }
+  
+  /* Mostrar submenú al pasar el mouse */
+  .menu > li:hover .submenu {
+    display: block;
+  }
+
+  /* ... (resto del código CSS) */
+
+/* Estilo para los submenús */
+.submenu {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease-out;
+  }
+  
+  .submenu.active {
+    max-height: 500px; /* Ajusta esta altura según tus necesidades */
+    transition: max-height 0.3s ease-in;
+  }
+  
+  
