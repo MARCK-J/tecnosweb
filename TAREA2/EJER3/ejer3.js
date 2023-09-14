@@ -1,23 +1,28 @@
-const form = document.getElementById('myForm');
-const emailInput = document.getElementById('email');
-const passwordInput = document.getElementById('password');
+$(document).ready(function () {
+    $('#contactForm').submit(function (e) {
+        e.preventDefault();
 
-form.addEventListener('submit', function(event) {
-  if (!isValidEmail(emailInput.value)) {
-    alert('Por favor, ingresa un correo electrónico válido.');
-    event.preventDefault();
-  }
+        // Obtener los datos del formulario
+        var formData = {
+            name: $('#name').val(),
+            email: $('#email').val(),
+            message: $('#message').val()
+        };
 
-  if (!isValidPassword(passwordInput.value)) {
-    alert('La contraseña debe tener al menos 8 caracteres.');
-    event.preventDefault();
-  }
+        // Validar los campos del formulario
+        if (formData.name === '' || formData.email === '' || formData.message === '') {
+            $('#errorMessage').text('Por favor, complete todos los campos.');
+            $('#successMessage').text('');
+            return;
+        }
+
+        // Validar el formato del correo electrónico
+        var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        if (!emailPattern.test(formData.email)) {
+            $('#errorMessage').text('El correo electrónico no es válido.');
+            $('#successMessage').text('');
+            return;
+        }
+    });
 });
 
-function isValidEmail(email) {
-  return email.includes('@');
-}
-
-function isValidPassword(password) {
-  return password.length >= 8;
-}

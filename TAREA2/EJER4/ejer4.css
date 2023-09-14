@@ -1,45 +1,40 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #591568;
-}
-
-.carousel-container {
-    max-width: 800px;
-    overflow: hidden;
-    position: relative;
-}
-
-.carousel {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel-slide {
-    width: 100%;
-    height: auto;
-}
-
-.carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
+/* Estilos para el botón de navegación */
+.navbar-toggler i {
     font-size: 24px;
-    cursor: pointer;
-    z-index: 1;
-}
+  }
+  
+  /* Estilos para los botones de enlace */
+  .btn-link {
+    text-decoration: none;
+    color: #333; /* Cambia el color del texto de los botones */
+  }
+  
+  .btn-link:hover {
+    text-decoration: underline; /* Subrayar el texto cuando se pasa el mouse sobre el botón */
+  }
+  
+  /* Estilos para la sección del menú desplegable */
+  .collapse {
+    background-color: #f8f9fa; /* Cambia el color de fondo de la sección */
+    border: 1px solid #ccc; /* Agrega un borde alrededor de la sección */
+  }
+  
+  /* Estilos para los botones del menú desplegable */
+  .collapse button {
+    padding: 10px 20px; /* Aumenta el espacio dentro de los botones */
+  }
+  
+  .collapse button.border-bottom {
+    border-bottom: 1px solid #ccc; /* Agrega un borde inferior a algunos botones */
+  }
+  
+  /* Agrega sombra al menú desplegable */
+  .shadow-3 {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
 
-.prev-button {
-    left: 10px;
-}
-
-.next-button {
-    right: 10px;
-}
-
+  .navbar-toggler .fas.fa-hamburger {
+    font-size: 30px; /* Modifica el tamaño del icono */
+    color: #007bff; /* Modifica el color del icono (azul en este caso) */
+  }
+  
